@@ -6,6 +6,9 @@ It also includes additional plugins that I often use to make Vim yet more produc
 
 This material is provided for free. These plugins and configurations work for me but there's no guarantee they will work for you. Use at your own risk!! You can also use the provided `.vimrc` file as a starting point and make changes according to your preferences.
 
+## 截图
+![PaperColor](https://github.com/caiwp/vim-go-ide/blob/master/1515145101529.jpg?raw=true)
+
 ## Plugins
 
 The following plugins are used:
