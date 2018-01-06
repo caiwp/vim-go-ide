@@ -243,9 +243,6 @@ noremap <right> :bn<CR>
 " kj 替换 Esc
 inoremap kj <Esc>
 
-" 打开当前文件目录
-"nn <leader>b :exec("NERDTree ".expand('%:h'))<CR>")
-
 map <leader><space> :FixWhitespace<cr>
 
 " map <leader>n :NERDTreeToggle<CR>
@@ -304,3 +301,5 @@ map <leader>f :NERDTreeFind<cr>
 
 " 复制选中区到系统剪切板中
 vnoremap <leader>y "+y"
+
+set scrolloff=3
