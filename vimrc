@@ -125,6 +125,7 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 " au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>t <Plug>(go-test-func)
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
@@ -136,12 +137,14 @@ function! s:build_go_files()
   endif
 endfunction
 
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+" autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " Enabling GoMetaLinter on save
-" let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 1
 " let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-" let g:go_metalinter_deadline = "5s"
+"let g:go_metalinter_autosave_enabled = ['errcheck']
+let g:go_metalinter_autosave_enabled = []
+let g:go_metalinter_deadline = "5s"
 
 "============================================================================
 " Enable neosnippet
@@ -241,7 +244,7 @@ noremap <left> :bp<CR>
 noremap <right> :bn<CR>
 
 " kj 替换 Esc
-inoremap kj <Esc>
+" inoremap kj <Esc>
 
 map <leader><space> :FixWhitespace<cr>
 
@@ -303,3 +306,16 @@ map <leader>f :NERDTreeFind<cr>
 vnoremap <leader>y "+y"
 
 set scrolloff=3
+
+
+" 设置文内智能搜索提示
+" 高亮search命中的文本
+set hlsearch
+" 打开增量搜索模式,随着键入即时搜索
+set incsearch
+" 搜索时忽略大小写
+set ignorecase
+" 有一个或以上大写字母时仍大小写敏感
+set smartcase
+
+let g:completor_clang_binary = '/usr/bin/clang'
