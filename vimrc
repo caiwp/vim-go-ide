@@ -12,6 +12,7 @@ set background=dark
 set t_Co=256
 
 " Syntax highlight on
+syntax enable
 syntax on
 
 " Filetype identification on
@@ -72,23 +73,23 @@ if !exists('g:airline_symbols')
 endif
 
  " unicode symbols
-let g:airline_left_sep = ' '
-let g:airline_left_sep = ' '
-let g:airline_right_sep = ' '
-let g:airline_right_sep = ' '
-let g:airline_symbols.crypt = '🔒 '
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = '㏑'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
+let g:airline_left_sep           = ' '
+let g:airline_left_sep           = ' '
+let g:airline_right_sep          = ' '
+let g:airline_right_sep          = ' '
+let g:airline_symbols.crypt      = '🔒 '
+let g:airline_symbols.linenr     = '☰'
+let g:airline_symbols.linenr     = '␊'
+let g:airline_symbols.linenr     = '␤'
+let g:airline_symbols.linenr     = '¶'
+let g:airline_symbols.maxlinenr  = ''
+let g:airline_symbols.maxlinenr  = '㏑'
+let g:airline_symbols.branch     = '⎇'
+let g:airline_symbols.paste      = 'ρ'
+let g:airline_symbols.paste      = 'Þ'
+let g:airline_symbols.paste      = '∥'
+let g:airline_symbols.spell      = 'Ꞩ'
+let g:airline_symbols.notexists  = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 
 "============================================================================
@@ -147,30 +148,6 @@ let g:go_metalinter_autosave_enabled = []
 let g:go_metalinter_deadline = "5s"
 
 "============================================================================
-" Enable neosnippet
-"============================================================================
-let g:go_snippet_engine = "neosnippet"
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/neosnippets'
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-"============================================================================
 " numbers plugin
 "============================================================================
 nnoremap <F3> :NumbersToggle<CR>
@@ -181,7 +158,7 @@ nnoremap <F4> :NumbersOnOff<CR>
 "============================================================================
 " map <F5> :NERDTreeToggle<CR>
 
-let g:completor_gocode_binary = '/Users/caiwenpi/Data/gopath/bin/gocode'
+" let g:completor_gocode_binary = '/Users/caiwenpi/Data/gopath/bin/gocode'
 
 " 修改leader键
 let mapleader = ','
@@ -217,10 +194,10 @@ set shiftround
 " 粘贴多行缩进
 set pastetoggle=<F2>
 
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set helplang=cn
-set ffs=unix,dos,mac
+set encoding      =utf-8
+set fileencodings =ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set helplang      =cn
+set ffs           =unix,dos,mac
 
 noremap <F1> <Esc>
 
@@ -246,7 +223,7 @@ noremap <right> :bn<CR>
 " kj 替换 Esc
 " inoremap kj <Esc>
 
-map <leader><space> :FixWhitespace<cr>
+map <leader><space> :StripWhitespace<cr>
 
 " map <leader>n :NERDTreeToggle<CR>
 " let NERDTreeHighlightCursorline=1
@@ -265,29 +242,26 @@ let g:NERDTreeMapOpenVSplit = 'v'
 " 是否自动开启nerdtree
 " thank to @ListenerRi, see https://github.com/wklken/k-vim/issues/165
 
-let g:go_fmt_fail_silently = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_function_arguments = 1
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_highlight_space_tab_error = 1
+let g:go_fmt_fail_silently                   = 1
+let g:go_highlight_functions                 = 1
+let g:go_highlight_methods                   = 1
+let g:go_highlight_structs                   = 1
+let g:go_highlight_operators                 = 1
+let g:go_highlight_build_constraints         = 1
+let g:go_highlight_function_arguments        = 1
+let g:go_highlight_types                     = 1
+let g:go_highlight_fields                    = 1
+let g:go_highlight_build_constraints         = 1
+let g:go_highlight_generate_tags             = 1
+let g:go_highlight_variable_declarations     = 1
+let g:go_highlight_variable_assignments      = 1
+let g:go_highlight_space_tab_error           = 1
 let g:go_highlight_trailing_whitespace_error = 1
-let g:go_def_mapping_enabled = 1
-let g:go_def_mode = 'godef'
+let g:go_def_mapping_enabled                 = 1
+let g:go_def_mode                            = 'gopls'
 
 " 括号高亮
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 nmap <Leader>m :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
@@ -307,7 +281,6 @@ vnoremap <leader>y "+y"
 
 set scrolloff=3
 
-
 " 设置文内智能搜索提示
 " 高亮search命中的文本
 set hlsearch
@@ -318,4 +291,103 @@ set ignorecase
 " 有一个或以上大写字母时仍大小写敏感
 set smartcase
 
-let g:completor_clang_binary = '/usr/bin/clang'
+" https://github.com/junegunn/vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" https://github.com/junegunn/fzf
+set rtp+=/usr/local/opt/fzf
+function! s:ag_to_qf(line)
+  let parts = split(a:line, ':')
+  return {'filename': parts[0], 'lnum': parts[1], 'col': parts[2],
+        \ 'text': join(parts[3:], ':')}
+endfunction
+
+function! s:ag_handler(lines)
+  if len(a:lines) < 2 | return | endif
+
+  let cmd = get({'ctrl-x': 'split',
+               \ 'ctrl-v': 'vertical split',
+               \ 'ctrl-t': 'tabe'}, a:lines[0], 'e')
+  let list = map(a:lines[1:], 's:ag_to_qf(v:val)')
+
+  let first = list[0]
+  execute cmd escape(first.filename, ' %#\')
+  execute first.lnum
+  execute 'normal!' first.col.'|zz'
+
+  if len(list) > 1
+    call setqflist(list)
+    copen
+    wincmd p
+  endif
+endfunction
+
+command! -nargs=* Ag call fzf#run({
+\ 'source':  printf('ag --nogroup --column --color "%s"',
+\                   escape(empty(<q-args>) ? '^(?=.)' : <q-args>, '"\')),
+\ 'sink*':    function('<sid>ag_handler'),
+\ 'options': '--ansi --expect=ctrl-t,ctrl-v,ctrl-x --delimiter : --nth 4.. '.
+\            '--multi --bind=ctrl-a:select-all,ctrl-d:deselect-all '.
+\            '--color hl:68,hl+:110',
+\ 'down':    '50%'
+\ })
+
+" ctrlp
+set runtimepath^=~/.vim/plugged/ctrlp.vim
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+
+" 退出插入模式指定类型的文件自动保存
+au InsertLeave *.go,*.php write
+
+let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
+"==============================================================================
+"  nerdtree-git-plugin 插件
+"==============================================================================
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+let g:NERDTreeShowIgnoredStatus = 1
+
+source ~/.plugins.vim
