@@ -27,4 +27,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'Valloric/YouCompleteMe'
 
+Plug 'NLKNguyen/papercolor-theme'
+
 call plug#end()

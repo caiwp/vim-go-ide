@@ -6,11 +6,6 @@
 "============================================================================
 " General options
 "============================================================================
-" Color molokai
-colo PaperColor
-set background=dark
-set t_Co=256
-
 " Syntax highlight on
 syntax enable
 syntax on
@@ -375,7 +370,7 @@ let g:tagbar_type_go = {
 "==============================================================================
 "  nerdtree-git-plugin 插件
 "==============================================================================
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -388,6 +383,12 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 
 source ~/.plugins.vim
+
+" Color molokai
+set background=dark
+colorscheme PaperColor
+set t_Co=256
+
